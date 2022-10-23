@@ -1,0 +1,7 @@
+void removeDefBetween(int startValue, int endValue, vector<Monster> &v){
+	vector<Monster> u;
+	for(auto& vv : v){
+		if(vv.second.second < startValue || vv.second.second > endValue) u.push_back(vv);
+	}
+	v = u;
+}

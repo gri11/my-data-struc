@@ -1,0 +1,21 @@
+class Student{
+public:
+  int age;
+  string fname, lname;
+};
+
+class StudentComparator{
+public:
+  bool operator() (const Student& s1, const Student& s2) const {
+  // เติม C++ code ตรงนี้
+
+  if(s1.age == s2.age && s1.fname == s2.fname) return s1.lname < s2.lname;
+  if(s1.age == s2.age) return s1.fname < s2.fname;
+  return s1.age > s2.age;
+  
+};
+int main() {
+      vector<Student> students;
+      //......
+      sort(students.begin(), students.end(), StudentComparator());
+}

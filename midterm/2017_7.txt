@@ -1,0 +1,28 @@
+//ไม่ต้องสน include นะ ให้ถือว่า include ทุกอย่างทจี่ าเป็นมาแลว้
+class MTGCard{
+public:
+  // ห้ามแก้หรือเพมิ่ -ลด ตัวแปร
+  string name;
+  int genericCost;
+  vector<pair<string,int> > elementCost; // แต่ละ pair จะบอกว่าธาตอุ ะไร มีกี่หน่วย
+
+  //เขียนฟังก์ชั่นที่จาเป็นกับการ sort (ถ้ามี)
+
+  int sum() const { // must have const
+    int totalCost = genericCost;
+    for (auto p : elementCost){ // auto&
+      totalCost += p.second;
+    }
+
+    return totalCost;
+  }
+
+  bool operator<(const MTGCard &other){ //เติมโค้ด 
+    int thisCost = this.sum(); // sum();
+    int otherCost = other.sum();
+    if(totalCost == otherCost){
+      return this.name < other.name; // name
+    }
+    return totalCost < otherCost;
+
+} };
