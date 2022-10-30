@@ -25,9 +25,8 @@ void CP::vector_no_move<T>::expand_hook() {
   if(mSize == 0) 
     aux.push_back(0);
   else
-    //             prev idx       
     aux.push_back(aux.back() + (mData.end()-2)->size());
-
+    //             prev idx       
 }
 
 #endif
